@@ -5,16 +5,16 @@ d3.json(url).then(function(data) {   //Extract the data
 });
 //var depth=[];
 function createMap(earthquakeData) {
-    let street = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {        //define tilelayer
+    let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {        //define tilelayer
         minZoom: 0,
-        maxZoom: 5,
-        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 4.4,
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         ext: 'png'
     });
 
     let myMap = L.map("map", {              //create base map
         center: [40.0356, -115.6681],
-        zoom: 6,
+        zoom: 5,
         layers: [street]
     });
 
